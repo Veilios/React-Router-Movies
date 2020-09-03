@@ -33,7 +33,7 @@ const App = () => {
     <div>
       <SavedList list={[ /* This is stretch */]} />
       <Route path="/movies/:id">
-        <Movie />
+        <Movie props={movieList}/>
       </Route>
       <Route exact path="/">
         <MovieList movies={movieList}/>

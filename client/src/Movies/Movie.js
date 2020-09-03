@@ -12,14 +12,14 @@ const Movie = (props) => {
        axios
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
-          console.log("Movie: ", response.data);
+          console.log(response.data);
           setMovie(response.data);
         })
         .catch(error => {
           console.error(error);
         });
-
-  },[]);
+        
+  },[movie]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => {
@@ -33,12 +33,12 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
-        <h2>{movie.title}</h2>
+        <h2>{title}</h2>
         <div className="movie-director">
-          Director: <em>{movie.director}</em>
+          Director: <em>{director}</em>
         </div>
         <div className="movie-metascore">
-          Metascore: <strong>{movie.metascore}</strong>
+          Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
 
